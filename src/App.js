@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import SearchBox from './SearchBox'
+import BooksContainer from './BooksContainer'
 
 class App extends Component {
   constructor(){
@@ -37,6 +39,9 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <h2>Welcome to React Books Search</h2>
+          <SearchBox />
+
+          <BooksContainer />
         </div>
       </div>
     )
