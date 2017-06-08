@@ -13,10 +13,15 @@ class App extends Component {
 
     this.getBooks = this.getBooks.bind(this)
     this.getQuery = this.getQuery.bind(this)
+    this.changeSearchText = this.changeSearchText.bind(this)
   }
 
   componentDidMount(){
     this.getBooks()
+  }
+
+  changeSearchText(text){
+    this.setState({searchText:text})
   }
 
   getQuery(){
@@ -39,7 +44,9 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <h2>Welcome to React Books Search</h2>
-          <SearchBox />
+          <SearchBox changeSearchText={this.changeSearchText} 
+                     searchText={this.state.searchText} 
+                     getBooks={this.getBooks}/>
 
           <BooksContainer />
         </div>
