@@ -6,7 +6,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      searchText: 'Zero To One',
+      searchText: '',
       searchItemsCount: 5,
       books : []
     }
@@ -14,10 +14,6 @@ class App extends Component {
     this.getBooks = this.getBooks.bind(this)
     this.getQuery = this.getQuery.bind(this)
     this.changeSearchText = this.changeSearchText.bind(this)
-  }
-
-  componentDidMount(){
-    this.getBooks()
   }
 
   changeSearchText(text){
@@ -48,7 +44,7 @@ class App extends Component {
                      searchText={this.state.searchText} 
                      getBooks={this.getBooks}/>
 
-          <BooksContainer />
+          <BooksContainer books={this.state.books} />
         </div>
       </div>
     )

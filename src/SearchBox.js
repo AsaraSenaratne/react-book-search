@@ -16,7 +16,7 @@ class SearchBox extends Component{
 		return(
 			<div>
 				<div>
-					<input type='text' onChange={this.changeText} value={this.props.searchText} />
+					<input placeholder='book name' type='text' onChange={this.changeText} value={this.props.searchText} />
 					<button onClick={this.props.getBooks}> Search </button>
 				</div>
 			</div>
