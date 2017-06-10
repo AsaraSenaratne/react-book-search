@@ -2,10 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', Helvetica, Arial, Sans-Serif;
+}
+
+.app-title{
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+.app-title h2{
+	text-align: center;
 }
 
 .books-container{
 	width:80%;
+	margin: 0 auto;
 	display:flex;
 	justify-content: space-between;
 	flex-flow: row wrap;
@@ -21,4 +32,30 @@
 	height: 400px;
 	overflow-y: scroll;
 	margin-bottom: 10px;
+}
+
+
+.search-box{
+	display:flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.search-box__input{
+	font-size: 20px;
+	padding: 5px;
+	margin-right: 10px;
+}
+
+.search-box__button{
+	font-size: 20px;
+	color:black;
+	padding: 5px 10px;
+	background-color: white;
+	border: 3px solid #218ADB;
+	border-radius: 25px;
+}
+
+.search-box__button:focus{
+	outline: none;
 }

@@ -6,6 +6,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
+      loading: false,
       searchText: '',
       searchItemsCount: 10,
       books : []
@@ -29,22 +30,29 @@ class App extends Component {
   }
 
   getBooks(){
+    this.setState({loading:true})
     fetch(this.getQuery())
     .then(res => res.json())
     .then(result => {
-      this.setState({books:result.items})
+      this.setState({books:result.items || []})
+      this.setState({loading:false})
     })
   }
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React Books Search</h2>
+      <div>
+        <div className="app-title">
+          <h2>Welcome to React Books Search <span role="img" aria-label="search">🔍</span></h2>
+        </div>
+        <div>
           <SearchBox changeSearchText={this.changeSearchText} 
                      searchText={this.state.searchText} 
                      getBooks={this.getBooks}/>
 
-          <BooksContainer books={this.state.books} />
+          {this.state.loading 
+            ? <div> Loading </div>
+            : <BooksContainer books={this.state.books} />
+          }
         </div>
       </div>
     )

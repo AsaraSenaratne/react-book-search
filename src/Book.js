@@ -8,7 +8,7 @@ class Book extends Component{
 			<div className="book">
 				<h3> {book.title} </h3>
 				<p> {book.authors ? book.authors.join(',') : '<not provided>'} </p>
-				<img src={book.imageLinks ? book.imageLinks.thumbnail : placeHolder} />
+				<img alt={book.title} src={book.imageLinks ? book.imageLinks.thumbnail : placeHolder} />
 				<p> {book.description ? book.description.substring(0,250) : ''} </p>
 			</div>
 		)
