@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import SearchBox from './SearchBox'
 import BooksContainer from './BooksContainer'
 
+const API_ENDPOINT = 'https://www.googleapis.com/books/v1/volumes'
+
 class App extends Component {
   constructor(){
     super()
@@ -23,7 +25,7 @@ class App extends Component {
 
   getQuery(){
     const {searchText, searchItemsCount} = this.state
-    let query = `https://www.googleapis.com/books/v1/volumes`
+    let query = API_ENDPOINT
     query += `?q=${searchText}`
     query += `&maxResults=${searchItemsCount}`
     return query
@@ -50,7 +52,7 @@ class App extends Component {
                      getBooks={this.getBooks}/>
 
           {this.state.loading 
-            ? <div> Loading </div>
+            ? <div className="loading"> Loading ...</div>
             : <BooksContainer books={this.state.books} />
           }
         </div>

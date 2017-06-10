@@ -6,10 +6,10 @@ class Book extends Component{
 		const {book} = this.props
 		return(
 			<div className="book">
-				<h3> {book.title} </h3>
-				<p> {book.authors ? book.authors.join(',') : '<not provided>'} </p>
+				<h3 className="book-title"> {book.title} </h3>
+				<p className="book-authors"> {book.authors ? book.authors.join(',') : '<not provided>'} </p>
 				<img alt={book.title} src={book.imageLinks ? book.imageLinks.thumbnail : placeHolder} />
-				<p> {book.description ? book.description.substring(0,250) : ''} </p>
+				<p className="book-description"> {book.description ? book.description.substring(0,250) : ''} </p>
 			</div>
 		)
 	}

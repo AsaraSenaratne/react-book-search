@@ -14,43 +14,65 @@
 	text-align: center;
 }
 
+.loading{
+	text-align: center;
+}
+
 .books-container{
-	width:80%;
+	width:90%;
 	margin: 0 auto;
 	display:flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-flow: row wrap;
 	align-content: space-between;
 }
 
 .book {
-	border : 1px solid grey;
+	border : 2px solid #DCDCDC;
 	padding: 10px;
-	border-radius: 5px;
+	padding: 10px;
+	border-radius: 8px;
 	background-color: #fff;
 	width:300px;
-	height: 400px;
+	height: 450px;
 	overflow-y: scroll;
 	margin-bottom: 10px;
+}
+
+.book-title {
+	padding: 5px;
+}
+
+.book-authors {
+	padding: 5px;
+}
+
+.book-description {
+	padding: 5px;
+	font-size: 14px;
+	font-weight: 100;
 }
 
 
 .search-box{
 	display:flex;
 	justify-content: center;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
+
 
 .search-box__input{
 	font-size: 20px;
-	padding: 5px;
+	padding: 10px;
 	margin-right: 10px;
+	border:2px solid #DCDCDC;
+	border-radius: 3px;
 }
 
 .search-box__button{
 	font-size: 20px;
 	color:black;
-	padding: 5px 10px;
+	padding: 10px 15px;
 	background-color: white;
 	border: 3px solid #218ADB;
 	border-radius: 25px;
@@ -58,4 +80,21 @@
 
 .search-box__button:focus{
 	outline: none;
+}
+
+.search-settings{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.search-settings span{
+	padding:5px;
+}
+
+.search-settings input{
+	margin-left: 10px;
+	padding:5px;
+	border: 2px solid #DCDCDC;
+	border-radius: 3px;
 }

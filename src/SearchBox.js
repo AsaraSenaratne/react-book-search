@@ -14,14 +14,21 @@ class SearchBox extends Component{
 	}
 	render(){
 		return(
-			<div className="search-box">
-				<div>
-					<input className="search-box__input"
-						   placeholder='enter a book name' 
-						   type='text' 
-						   onChange={this.changeText} 
-						   value={this.props.searchText} />
-					<button className="search-box__button" onClick={this.props.getBooks}> Search </button>
+			<div>
+				<div className="search-box">
+					<div>
+						<input className="search-box__input"
+							   placeholder='enter a book name' 
+							   size="23"
+							   type='text' 
+							   onChange={this.changeText} 
+							   value={this.props.searchText} />
+						<button className="search-box__button" onClick={this.props.getBooks}> Search </button>
+					</div>
+
+				</div>
+				<div className="search-settings">
+					<span> Results Count </span> <input type='text' size='3' />
 				</div>
 			</div>
 		)
