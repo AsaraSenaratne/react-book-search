@@ -7,7 +7,7 @@ class App extends Component {
     super()
     this.state = {
       searchText: '',
-      searchItemsCount: 5,
+      searchItemsCount: 10,
       books : []
     }
 
