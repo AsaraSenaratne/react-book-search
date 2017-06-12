@@ -39,6 +39,11 @@
 	margin-bottom: 10px;
 }
 
+.book:hover{
+	border: 5px solid #DFDFDF;
+
+}
+
 .book-title {
 	padding: 5px;
 }

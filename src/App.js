@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import SearchBox from './SearchBox'
-import BooksContainer from './BooksContainer'
 
 const API_ENDPOINT = 'https://www.googleapis.com/books/v1/volumes'
 
@@ -32,12 +31,12 @@ class App extends Component {
   }
 
   getBooks(){
-    this.setState({loading:true})
+    //this.setState({loading:true})
     fetch(this.getQuery())
     .then(res => res.json())
     .then(result => {
       this.setState({books:result.items || []})
-      this.setState({loading:false})
+      //this.setState({loading:false})
     })
   }
   render() {
@@ -51,10 +50,11 @@ class App extends Component {
                      searchText={this.state.searchText} 
                      getBooks={this.getBooks}/>
 
-          {this.state.loading 
-            ? <div className="loading"> Loading ...</div>
-            : <BooksContainer books={this.state.books} />
-          }
+          <pre>
+            {
+              JSON.stringify(this.state.books,null,4)
+            }
+          </pre>
         </div>
       </div>
     )
