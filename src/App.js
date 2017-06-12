@@ -6,11 +6,12 @@ const API_ENDPOINT = 'https://www.googleapis.com/books/v1/volumes'
 class App extends Component {
   constructor(){
     super()
+
     this.state = {
-      loading: false,
+      books : [],
       searchText: '',
       searchItemsCount: 10,
-      books : []
+      loading: false,
     }
 
     this.getBooks = this.getBooks.bind(this)
@@ -46,8 +47,8 @@ class App extends Component {
           <h2>Welcome to React Books Search <span role="img" aria-label="search">🔍</span></h2>
         </div>
         <div>
-          <SearchBox changeSearchText={this.changeSearchText} 
-                     searchText={this.state.searchText} 
+          <SearchBox searchText={this.state.searchText} 
+                     changeSearchText={this.changeSearchText} 
                      getBooks={this.getBooks}/>
 
           <pre>
